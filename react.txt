@@ -1,0 +1,29 @@
+# Function Components
+- historically used for simpler "dumb" Components
+- write logic in a JS Function
+- no render method needed, just return content
+
+function Dog() {
+    return `<div>Dog</div>`
+}
+
+# Class Components
+- needs render
+- write logic in a JS Class
+- traditional React component
+
+class Dog extends React.component {
+    render() {
+        return <div>dog</dog>
+    }
+}
+
+## Function vs Class Components
+- both can accept props and render content
+- function components couldn't use important features like state and lifecycle methods
+- full-featured function components with hooks
+
+#JSX - Javascript Extension / Javascript + XAML
+- not legal JS -> has to be transpiled to JS with Babel
+- more strict than HTML
+
