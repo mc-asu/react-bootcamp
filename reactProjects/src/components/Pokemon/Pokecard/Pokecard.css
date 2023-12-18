@@ -6,7 +6,7 @@
   text-align: center;
   padding: 5px;
   border-radius: 3px;
-  background: gainsboro;
+  background: white;
 }
 
 .Pokecard-data {
@@ -21,6 +21,7 @@
   width: 300px; /* Set the desired width */
   height: 300px; /* Set the desired height */
   overflow: hidden; /* Hide any overflowing content */
+  background-color: gainsboro;
 }
 
 /* Style the image inside the container */
