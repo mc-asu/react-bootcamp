@@ -1,0 +1,42 @@
+.Pokecard {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.56);
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  background: gainsboro;
+}
+
+.Pokecard-data {
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.Pokemon-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px; /* Set the desired width */
+  height: 300px; /* Set the desired height */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Style the image inside the container */
+.Pokemon-image-container img {
+  width: 150px;
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
+
+.Pokecard-types {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.Pokecard-base {
+  display: flex;
+  flex-direction: column;
+}
