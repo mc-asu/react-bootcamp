@@ -87,3 +87,117 @@ So what we'll have is a stateful parent component, a smart component that passes
 as props to the dumber stateless components.
 
 In react the idea is generalized as downward data flow
+
+Updating existing state
+
+// Using an object
+setState({ key: value });
+
+// Using a callback function
+setState((prevState) => {
+  // Calculate the new state based on the previous state
+  return { key: prevState.key + 1 };
+});
+
+When you pass a callback function to setState, React guarantees that the callback will be executed after the state has been updated.
+This is particularly useful when you need to perform computations based on the previous state before updating.
+
+So, while using a callback is not always required, it's crucial when you want to ensure the
+correct order of state updates and subsequent actions in your React components.
+
+Mutating State the Safe way
+
+In React, directly mutating the state is not considered a safe practice. React relies on the immutability of state to efficiently update the UI and trigger re-renders.
+If you directly mutate the state, React might not detect the change, leading to unexpected behavior.
+
+TLDR: Create a copy and mutate.
+
+Here are the recommended approaches for updating state in React:
+
+Using the useState Hook:
+
+Use the useState Hook to declare state variables and the corresponding updater functions. React guarantees that the state variables returned by useState are immutable.
+
+import React, { useState } from 'react';
+
+const MyComponent = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    // Use the updater function to update state immutably
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+
+export default MyComponent;
+Using the useReducer Hook:
+
+For more complex state logic, consider using the useReducer Hook. It allows you to update state based on the previous state and an action.
+
+import React, { useReducer } from 'react';
+
+const countReducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    default:
+      return state;
+  }
+};
+
+const MyComponent = () => {
+  const [state, dispatch] = useReducer(countReducer, { count: 0 });
+
+  const increment = () => {
+    // Dispatch an action to update state immutably
+    dispatch({ type: 'INCREMENT' });
+  };
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+Using Immer for Complex State:
+
+For deeply nested or complex state, you can use a library like Immer to make state updates more readable and maintainable.
+
+import React, { useState } from 'react';
+import produce from 'immer';
+
+const MyComponent = () => {
+  const [data, setData] = useState({ value: 1 });
+
+  const updateData = () => {
+    // Use Immer to update state in a more readable way
+    setData((draft) => {
+      draft.value += 1;
+    });
+  };
+
+  return (
+    <div>
+      <p>Data Value: {data.value}</p>
+      <button onClick={updateData}>Update Data</button>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+In summary, always use the provided updater functions (setCount, dispatch, etc.) or libraries like Immer to ensure safe and predictable state updates in React. Avoid direct state mutation.

@@ -1,0 +1,12 @@
+.Lottery {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.Lottery_balls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: row;
+}

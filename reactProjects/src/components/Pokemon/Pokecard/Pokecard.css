@@ -15,6 +15,7 @@
 }
 
 .Pokemon-image-container {
+  position: relative; /* Ensure relative positioning for absolute positioning of the next image */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,8 +27,24 @@
 
 /* Style the image inside the container */
 .Pokemon-image-container img {
-  width: 150px;
   object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
+.Pokecard-img {
+  /* Styles for the default state */
+}
+
+.Pokecard-img:hover {
+  /* Styles for the hovered state */
+}
+
+.Pokecard-img:hover + .Pokecard-img {
+  /* Styles for the next image after the hovered image */
+  /* Add your styles for the next image here */
+  position: absolute;
+  top: 0; /* Adjust as needed */
+  left: 100%; /* Adjust as needed */
+  transform: translateX(10px); /* Adjust as needed */
 }
 
 
@@ -41,3 +58,4 @@
   display: flex;
   flex-direction: column;
 }
+

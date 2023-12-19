@@ -10,6 +10,7 @@ import Rando from './components/Rando'
 import Counter from './components/Counter'
 import StateClicker from './components/StateClicker'
 import RollDice from './components/RollDice/RollDice'
+import Lottery from './components/Lottery/Lottery'
 
 // Specify all properties: name, family, style
 
@@ -19,13 +20,15 @@ function App() {
 
   return (
     <>
-      <RollDice />
-     {/* <Rando maxNum={7} /> */}
-      {/* <StateClicker /> */}
-      {/* <Pokegame />  */}
-      {/* <Machine s1="🥰" s2="🥰" s3="🥰" /> */}
-      {/* <Friend name='Elton' hobbies={['Piano', 'Singing', 'Dancing']} title='Just a friend!' /> */}
-      {/* <Fruits /> */}
+    {/* <Lottery title={"Lottery"} numBalls={6}/> */}
+    {/* <Lottery title={"Mini Daily"} numBalls={4}/> */}
+    {/* <RollDice /> */}
+    {/* <Rando maxNum={7} /> */}
+    {/* <StateClicker /> */}
+    <Pokegame /> 
+    {/* <Machine s1="🥰" s2="🥰" s3="🥰" /> */}
+    {/* <Friend name='Elton' hobbies={['Piano', 'Singing', 'Dancing']} title='Just a friend!' /> */}
+    {/* <Fruits /> */}
     </>
   )
 }

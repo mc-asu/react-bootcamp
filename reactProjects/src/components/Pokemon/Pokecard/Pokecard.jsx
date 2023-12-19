@@ -12,11 +12,18 @@ const Pokecard = ({ pokemon }) => {
     <div className="Pokecard">
       <span className="Pokecard-data">{name.english}</span>
       <div className="Pokemon-image-container">
-        <img className="Pokecard-img" 
+        <img
+          className="Pokecard-img" 
           alt={name.english}
           src={IMG_SRC}
-          onMouseOver={e => (e.currentTarget.src = POKE_GIF)}
-          onMouseOut={e => (e.currentTarget.src = IMG_SRC)} 
+          onMouseOver={e => {
+            e.currentTarget.src = POKE_GIF
+            e.currentTarget.classList.add('hovered')
+          }}
+          onMouseOut={e => {
+            e.currentTarget.src = IMG_SRC
+            e.currentTarget.classList.remove('hovered')
+          }} 
           loading="lazy"
         />
       </div>
