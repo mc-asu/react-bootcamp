@@ -9,15 +9,20 @@ import Pokegame from './components/Pokemon/Pokegame/Pokegame'
 import Rando from './components/Rando'
 import Counter from './components/Counter'
 import StateClicker from './components/StateClicker'
+import RollDice from './components/RollDice/RollDice'
+
+// Specify all properties: name, family, style
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <RollDice />
      {/* <Rando maxNum={7} /> */}
-      <StateClicker />
-      <Pokegame /> 
+      {/* <StateClicker /> */}
+      {/* <Pokegame />  */}
       {/* <Machine s1="🥰" s2="🥰" s3="🥰" /> */}
       {/* <Friend name='Elton' hobbies={['Piano', 'Singing', 'Dancing']} title='Just a friend!' /> */}
       {/* <Fruits /> */}

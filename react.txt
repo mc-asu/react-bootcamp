@@ -85,3 +85,5 @@ State as props
 It's basically a pattern for creating a defining your application structure.
 So what we'll have is a stateful parent component, a smart component that passes its state values down
 as props to the dumber stateless components.
+
+In react the idea is generalized as downward data flow
