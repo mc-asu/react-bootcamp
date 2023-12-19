@@ -4,7 +4,6 @@ import './Pokecard.css'
 const Pokecard = ({ pokemon }) => {
   const useV1 = true
   const { name, type, id, base } = pokemon
-  console.log(type)
   const POKE_IMG = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
   const POKE_IMG_V2 = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/'
   const POKE_GIF = `https://projectpokemon.org/images/normal-sprite/${name.english.toLowerCase()}.gif`
@@ -29,12 +28,11 @@ const Pokecard = ({ pokemon }) => {
       </div>
     
       <div className="Pokecard-base">
-        <span className="Pokecard-data">HP: { base['HP'] }</span>
-        <span className="Pokecard-data">Attack: { base["Attack"] }</span>
-        <span className="Pokecard-data">Defense: { base["Defense"] }</span>
-        <span className="Pokecard-data">Sp. Attack: { base["Sp. Attack"] }</span>
-        <span className="Pokecard-data">Sp. Defense: { base["Sp. Defense"] }</span>
-        <span className="Pokecard-data">Speed: { base["Speed"] }</span>
+        {Object.entries(base).map(([key, value]) => (
+          <span className="Pokecard-data" key={key}>
+            {key}: {value}
+          </span>
+        ))}
       </div>
    
     </div>

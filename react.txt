@@ -7,7 +7,14 @@ function Dog() {
     return `<div>Dog</div>`
 }
 
-# Class Components
+# Class Components      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
 - needs render
 - write logic in a JS Class
 - traditional React component
@@ -27,3 +34,54 @@ class Dog extends React.component {
 - not legal JS -> has to be transpiled to JS with Babel
 - more strict than HTML
 
+super() vs super(props)
+
+there is no "this" in the constructor without super()
+super() is used in class constructors to call the constructor of the parent class.
+e.g.
+class Parent {
+  constructor() {
+    this.parentProperty = 'Parent Property';
+  }
+}
+
+class Child extends Parent {
+  constructor() {
+    super(); // Calls the constructor of the Parent class
+    this.childProperty = 'Child Property';
+  }
+}
+
+const childInstance = new Child();
+console.log(childInstance.parentProperty); // Outputs: Parent Property
+console.log(childInstance.childProperty); // Outputs: Child Property
+
+
+super(props) is used in React class components to access the props of the component within the constructor.
+e.g.
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props); // Accesses the props of the component
+    this.state = {
+      myState: 'Some state',
+    };
+  }
+}
+
+Changing state
+setState: It takes an object that describes the way the state should change and it patches the state object
+Think of set state as a request rather than an immediate command to update a component for better perceived
+performance. React may delay it and then update several components in a single pass.
+React does not guarantee that the state changes are applied immediately, so this is why it's important
+- can't setState on a component which is not mounted
+- don't setState inside a render, will probably refresh the whole page
+e.g.
+const [count, setCount] = useState(0)
+<button onClick={() => setCount((count) => count + 1)}>
+    count is {count}
+</button>
+
+State as props
+It's basically a pattern for creating a defining your application structure.
+So what we'll have is a stateful parent component, a smart component that passes its state values down
+as props to the dumber stateless components.
