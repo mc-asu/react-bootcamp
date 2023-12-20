@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Box from "./Box";
 
 const getRandomColor = () => {
@@ -10,35 +10,30 @@ const getRandomColor = () => {
   return color;
 }
 
-const BoxChanger = ({numOfBox = 16}) => {
-
-  const [box, setBoxes] = useState(Array.from ({length: numOfBox}), getRandomColor)
+const BoxChanger = ({ numOfBoxes = 1000 }) => {
+  const [boxes, setBoxes] = useState(Array.from({ length: numOfBoxes }, getRandomColor));
 
   useEffect(() => {
     // Generate random colors when the component mounts
-    const randomColors = Array.from({ length: numOfBox }, getRandomColor);
+    const randomColors = Array.from({ length: numOfBoxes }, getRandomColor);
     setBoxes(randomColors);
-  }, [numOfBox]);
+  }, [numOfBoxes]);
 
-  const handleBoxClick = (index) => {
-    setBoxes((prevColors) => {
-      const newColors = [...prevColors];
-      newColors[index] = getRandomColor();
-      return newColors;
+  const handleBoxClick = useCallback((index) => {
+    setBoxes((prevBoxes) => {
+      const newBoxes = [...prevBoxes];
+      newBoxes[index] = getRandomColor();
+      return newBoxes;
     });
-  };
-  
+  }, []);
+
   return (
     <div className="BoxChanger">
-      {
-        box.map((color, index) => (
-          <Box key={index} color={color} onBoxClick={() => handleBoxClick(index)} />
-        )
-      )
-    }
+      {boxes.map((color, index) => (
+        <Box key={index} color={color} onBoxClick={() => handleBoxClick(index)} />
+      ))}
     </div>
-  )
-   
+  );
 }
 
-export default BoxChanger
+export default BoxChanger;

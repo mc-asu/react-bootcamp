@@ -201,3 +201,87 @@ const MyComponent = () => {
 export default MyComponent;
 
 In summary, always use the provided updater functions (setCount, dispatch, etc.) or libraries like Immer to ensure safe and predictable state updates in React. Avoid direct state mutation.
+
+React Hooks:
+
+As of my last knowledge update in January 2022, the following are the main React hooks provided by the React library:
+
+1. **useState:**
+   - Manages state in functional components.
+   - Example:
+     ```jsx
+     const [state, setState] = useState(initialState);
+     ```
+
+2. **useEffect:**
+   - Performs side effects in functional components (e.g., data fetching, subscriptions, manual DOM manipulations).
+   - Example:
+     ```jsx
+     useEffect(() => {
+       // Side effect logic here
+     }, [dependencies]);
+     ```
+
+3. **useContext:**
+   - Provides access to the value of a React context.
+   - Example:
+     ```jsx
+     const contextValue = useContext(MyContext);
+     ```
+
+4. **useReducer:**
+   - Manages more complex state logic by using a reducer function.
+   - Example:
+     ```jsx
+     const [state, dispatch] = useReducer(reducer, initialState);
+     ```
+
+5. **useCallback:**
+   - Memoizes a callback function, preventing unnecessary re-creation on re-renders.
+   - Example:
+     ```jsx
+     const memoizedCallback = useCallback(() => {
+       // Memoized function logic
+     }, [dependencies]);
+     ```
+
+6. **useMemo:**
+   - Memoizes a value, preventing unnecessary re-computation on re-renders.
+   - Example:
+     ```jsx
+     const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+     ```
+
+7. **useRef:**
+   - Creates a mutable object that persists across renders.
+   - Example:
+     ```jsx
+     const myRef = useRef(initialValue);
+     ```
+
+8. **useImperativeHandle:**
+   - Customizes the instance value that is exposed when using `React.forwardRef`.
+   - Example:
+     ```jsx
+     useImperativeHandle(ref, () => ({
+       // Exposed instance value
+     }), [dependencies]);
+     ```
+
+9. **useLayoutEffect:**
+   - Similar to `useEffect`, but fires synchronously after all DOM mutations.
+   - Example:
+     ```jsx
+     useLayoutEffect(() => {
+       // DOM mutations
+     }, [dependencies]);
+     ```
+
+10. **useDebugValue:**
+    - Customizes the label displayed in the React DevTools for a custom hook.
+    - Example:
+      ```jsx
+      useDebugValue(value);
+      ```
+
+These are the core React hooks available as of my last update. Keep in mind that React evolves, and new features may have been introduced since then. Always refer to the official React documentation for the latest information: [React Hooks API Reference](https://reactjs.org/docs/hooks-reference.html).
