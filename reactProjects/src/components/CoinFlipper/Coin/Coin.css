@@ -1,0 +1,13 @@
+
+.coin .coin-image {
+  transition: transform 1s ease-in-out; /* Adjust the transition duration as needed */
+}
+
+img {
+  max-width: 200px;
+  mix-blend-mode: multiply;
+}
+
+.coin.flip .coin-image {
+  transform: rotateY(180deg);
+}

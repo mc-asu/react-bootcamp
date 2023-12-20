@@ -1,5 +1,4 @@
 import './App.css'
-import { useState } from 'react'
 
 import Machine from './components/Machine'
 import Friend from './components/Friend'
@@ -11,21 +10,19 @@ import Counter from './components/Counter'
 import StateClicker from './components/StateClicker'
 import RollDice from './components/RollDice/RollDice'
 import Lottery from './components/Lottery/Lottery'
-
-// Specify all properties: name, family, style
-
+import CoinFlipper from './components/CoinFlipper/CoinFlipper'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+    {/* <CoinFlipper /> */}
     {/* <Lottery title={"Lottery"} numBalls={6}/> */}
     {/* <Lottery title={"Mini Daily"} numBalls={4}/> */}
     {/* <RollDice /> */}
     {/* <Rando maxNum={7} /> */}
     {/* <StateClicker /> */}
-    <Pokegame /> 
+    {/* <Pokegame />  */}
+    {/* <Pokedex />  */}
     {/* <Machine s1="🥰" s2="🥰" s3="🥰" /> */}
     {/* <Friend name='Elton' hobbies={['Piano', 'Singing', 'Dancing']} title='Just a friend!' /> */}
     {/* <Fruits /> */}

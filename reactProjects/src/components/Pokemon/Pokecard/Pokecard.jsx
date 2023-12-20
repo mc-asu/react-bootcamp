@@ -29,7 +29,7 @@ const Pokecard = ({ pokemon }) => {
       </div>
       <div className="Pokecard-types">
         {
-          type.map(t => <div className="Pokecard-type Pokecard-data">{t}</div>
+          type.map(t => <div className="Pokecard-type Pokecard-data" key={t}>{t}</div>
           )
         }
       </div>
