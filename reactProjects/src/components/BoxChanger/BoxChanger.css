@@ -1,0 +1,11 @@
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.BoxChanger {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
