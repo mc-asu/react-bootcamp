@@ -2,10 +2,19 @@ import './LightsOut.css'
 const Light = ({ isOn, onClick}) => {
   return <div
   onClick={onClick}
-  className="light-box grid-item" 
-  style={{ backgroundColor: isOn ? '#fff' : '#000' }}
+  className={`light-box grid-item ${isOn ? 'active' : ''}`}
 />
 }
 
 export default Light
+
+// import './LightsOut.css'
+// const Light = ({ isOn, onClick}) => {
+//   return <div
+//   onClick={onClick}
+//   className={`light-box grid-item ${{isOn} ? '' : 'active'}`}
+// />
+// }
+
+// export default Light
 
