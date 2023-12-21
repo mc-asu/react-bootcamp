@@ -12,11 +12,13 @@ import RollDice from './components/RollDice/RollDice'
 import Lottery from './components/Lottery/Lottery'
 import CoinFlipper from './components/CoinFlipper/CoinFlipper'
 import BoxChanger from './components/BoxChanger/BoxChanger'
+import Hangman from './components/Hangman/Hangman'
 
 function App() {
   return (
     <>
-    <BoxChanger />
+    <Hangman />
+    {/* <BoxChanger /> */}
     {/* <CoinFlipper /> */}
     {/* <Lottery title={"Lottery"} numBalls={6}/> */}
     {/* <Lottery title={"Mini Daily"} numBalls={4}/> */}

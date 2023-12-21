@@ -285,3 +285,5 @@ As of my last knowledge update in January 2022, the following are the main React
       ```
 
 These are the core React hooks available as of my last update. Keep in mind that React evolves, and new features may have been introduced since then. Always refer to the official React documentation for the latest information: [React Hooks API Reference](https://reactjs.org/docs/hooks-reference.html).
+
+Avoid inline arrow functions/bind to prevent performance issues. Use HOCs or Memoization

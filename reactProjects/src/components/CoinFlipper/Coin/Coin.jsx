@@ -16,7 +16,7 @@ const Coin = ({ coinSide, isFlipping }) => {
       className={`coin-image ${coinSide ? 'heads' : 'tails'}`} 
       >
  <img 
-        
+        className='coin-img-part'
         src={coinSide ? 
             'https://i.pcgs.com/s3/cu-pcgs/Photograde/500/FlowingDol-66o.jpg' :
             'https://i.pcgs.com/s3/cu-pcgs/Photograde/500/FlowingDol-66r.jpg'
