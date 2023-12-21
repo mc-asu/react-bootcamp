@@ -1,5 +1,4 @@
-// Hangman.js
-import React, { useState } from "react";
+import { useState } from "react";
 import AlphaButtons from "./AlphaButtons";
 import "./Hangman.css";
 import img0 from "./src/0.jpg";
@@ -9,25 +8,20 @@ import img3 from "./src/3.jpg";
 import img4 from "./src/4.jpg";
 import img5 from "./src/5.jpg";
 import img6 from "./src/6.jpg";
-
-const getRandomWord = () => {
-  const words = ["elephant"];
-  const randomIndex = Math.floor(Math.random() * words.length);
-  return words[randomIndex];
-};
+import randomWord from "./words";
 
 const Hangman = ({ maxGuess = 6 }) => {
   const [gameState, setGameState] = useState({
     nWrong: 0,
     guessed: new Set(),
-    answer: getRandomWord(),
+    answer: randomWord(),
   });
 
   const resetGame = () => {
     setGameState({
       nWrong: 0,
       guessed: new Set(),
-      answer: getRandomWord(),
+      answer: randomWord(),
     });
   };
 
@@ -56,7 +50,7 @@ const Hangman = ({ maxGuess = 6 }) => {
       <h1>Hangman</h1>
       <img
         src={[img0, img1, img2, img3, img4, img5, img6][disableAllLetters ? 6 : gameState.nWrong]}
-        alt={`Wrong guesses: ${gameState.nWrong}`}
+        alt={`Wrong guesses: ${gameState.nWrong}/${maxGuess}`}
       />
       <p>Number of wrong guesses: {gameState.nWrong}</p>
       {disableAllLetters ? (
