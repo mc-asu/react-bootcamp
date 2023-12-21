@@ -1,9 +1,9 @@
 import './LightsOut.css'
-const Light = ({ active, onClick}) => {
+const Light = ({ isOn, onClick}) => {
   return <div
   onClick={onClick}
   className="light-box grid-item" 
-  style={{ backgroundColor: active ? '#fff' : '#000' }}
+  style={{ backgroundColor: isOn ? '#fff' : '#000' }}
 />
 }
 
