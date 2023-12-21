@@ -8,7 +8,7 @@ const Board = ({ nRow = 5, nCol = 5 }) => {
   // Function to generate the initial grid with some lights turned on
   const initializeGrid = () => {
     const initialGrid = Array.from({ length: nRow }, () =>
-      Array.from({ length: nCol }, () => Math.random() < 0.3) // Adjust the probability as needed
+      Array.from({ length: nCol }, () => Math.random() < .2) // Adjust the probability as needed
     );
     setGrid(initialGrid);
   };
