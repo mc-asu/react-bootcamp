@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Light from './Light'; // Import the Light component
 import './LightsOut.css'; // Import the external CSS file
 
-const Board = ({ nRow = 5, nCol = 5 }) => {
+const Board = ({ nRow = 3, nCol = 3 }) => {
   const [grid, setGrid] = useState([]);
 
   // Function to generate the initial grid with some lights turned on

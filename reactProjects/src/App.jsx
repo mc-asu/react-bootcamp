@@ -18,7 +18,7 @@ import Board from './components/LightsOut/Board'
 function App() {
   return (
     <>
-    <Board />
+    {/* <Board /> */}
     {/* <Hangman /> */}
     {/* <BoxChanger /> */}
     {/* <CoinFlipper /> */}
